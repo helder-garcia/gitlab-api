@@ -216,6 +216,11 @@
                 },
                 "page": {
                     "location": "query"
+                },
+                "after": {
+                    "location": "json",
+                    "required": false,
+                    "type" : "string"
                 }
             }
         },
