@@ -27,7 +27,6 @@ class ProjectEvent implements ResponseClassInterface
     public function __construct(array $item)
     {
         foreach ($item as $name => $content) {
-            echo($name . ' ' . $content . "\n");
             $this->{$name} = $content;
         }
     }
