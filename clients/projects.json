@@ -103,6 +103,9 @@
                 },
                 "page": {
                     "location": "query"
+                },
+                "after": {
+                    "location": "query"
                 }
             }
         },
