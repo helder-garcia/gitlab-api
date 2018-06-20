@@ -7,7 +7,7 @@ use Guzzle\Service\Command\OperationCommand;
 class ProjectEvent implements ResponseClassInterface
 {
 
-    protected $title;
+    protected $target_title;
     protected $project_id;
     protected $action_name;
     protected $target_id;
@@ -27,6 +27,7 @@ class ProjectEvent implements ResponseClassInterface
     public function __construct(array $item)
     {
         foreach ($item as $name => $content) {
+            echo($name . ' ' . $content . "\n");
             $this->{$name} = $content;
         }
     }
@@ -162,17 +163,17 @@ class ProjectEvent implements ResponseClassInterface
     /**
      * @return mixed
      */
-    public function getTitle()
+    public function getTargetTitle()
     {
-        return $this->title;
+        return $this->target_title;
     }
 
     /**
-     * @param mixed $title
+     * @param mixed $target_title
      */
-    public function setTitle($title)
+    public function setTargetTitle($target_title)
     {
-        $this->title = $title;
+        $this->target_title = $target_title;
     }
 
 
