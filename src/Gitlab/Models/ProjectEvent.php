@@ -16,6 +16,7 @@ class ProjectEvent implements ResponseClassInterface
     protected $data;
     protected $target_url;
     protected $author;
+    protected $created_at;
 
     public static function fromCommand(OperationCommand $command)
     {
@@ -190,6 +191,22 @@ class ProjectEvent implements ResponseClassInterface
     public function setAuthor($author)
     {
         $this->author = $author;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCreatedAt()
+    {
+        return $this->created_at;
+    }
+
+    /**
+     * @param mixed $created_at
+     */
+    public function setCreatedAt($created_at)
+    {
+        $this->created_at = $created_at;
     }
 
 }
