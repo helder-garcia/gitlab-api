@@ -217,6 +217,9 @@
                 "page": {
                     "location": "query"
                 },
+                "before": {
+                    "location": "query"
+                },
                 "after": {
                     "location": "query"
                 }
