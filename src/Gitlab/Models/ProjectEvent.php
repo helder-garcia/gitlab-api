@@ -15,6 +15,7 @@ class ProjectEvent implements ResponseClassInterface
     protected $author_id;
     protected $data;
     protected $target_url;
+    protected $author;
 
     public static function fromCommand(OperationCommand $command)
     {
@@ -175,5 +176,20 @@ class ProjectEvent implements ResponseClassInterface
         $this->target_title = $target_title;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getAuthor()
+    {
+        return $this->author;
+    }
+
+    /**
+     * @param mixed $target_title
+     */
+    public function setAuthor($author)
+    {
+        $this->author = $author;
+    }
 
 }
