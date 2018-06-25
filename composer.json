@@ -1,11 +1,15 @@
 {
-    "name" : "cnam/gitlab-api",
+    "name" : "helder-garcia/gitlab-api",
     "description" : "Sdk for integration gitlab api",
-    "minimum-stability": "beta",
+    "minimum-stability": "dev",
     "authors": [
         {
             "name": "Anton Popov",
             "email": "cnam812@gmail.com"
+        },
+        {
+            "name": "Helder Garcia",
+            "email": "helder.garcia@gmail.com"
         }
     ],
     "autoload": {
