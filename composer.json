@@ -3,7 +3,7 @@
     "description" : "Sdk for integration gitlab api",
     "minimum-stability": "dev",
     "license": "GPL-3.0-or-later",
-    "version": "0.3.6",
+    "version": "0.3.7",
     "authors": [
       {
         "name": "Helder Garcia",
