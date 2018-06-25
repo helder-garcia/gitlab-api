@@ -2,15 +2,17 @@
     "name" : "helder-garcia/gitlab-api",
     "description" : "Sdk for integration gitlab api",
     "minimum-stability": "dev",
+    "license": "GPL",
+    "version": "0.3.6",
     "authors": [
-        {
-            "name": "Anton Popov",
-            "email": "cnam812@gmail.com"
-        },
-        {
-            "name": "Helder Garcia",
-            "email": "helder.garcia@gmail.com"
-        }
+      {
+        "name": "Helder Garcia",
+        "email": "helder.garcia@gmail.com"
+      },
+      {
+        "name": "Anton Popov",
+        "email": "cnam812@gmail.com"
+      }
     ],
     "autoload": {
         "psr-4" : {
