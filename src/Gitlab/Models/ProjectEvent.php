@@ -11,6 +11,7 @@ class ProjectEvent implements ResponseClassInterface
     protected $project_id;
     protected $action_name;
     protected $target_id;
+    protected $target_iid;
     protected $target_type;
     protected $author_id;
     protected $data;
@@ -126,6 +127,22 @@ class ProjectEvent implements ResponseClassInterface
      * @param mixed $target_id
      */
     public function setTargetId($target_id)
+    {
+        $this->target_id = $target_id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTargetIid()
+    {
+        return $this->target_id;
+    }
+
+    /**
+     * @param mixed $target_id
+     */
+    public function setTargetIid($target_id)
     {
         $this->target_id = $target_id;
     }
