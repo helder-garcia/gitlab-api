@@ -77,9 +77,4 @@ class ProjectEventList implements ResponseClassInterface, \ArrayAccess, \Iterato
     {
         return count($this->storage);
     }
-
-    public function count()
-    {
-        return count($this->storage);
-    }
 }
