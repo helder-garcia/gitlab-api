@@ -11,13 +11,10 @@ class BaseList implements ResponseClassInterface, \ArrayAccess, \Iterator
 
     protected $pointer = 0;
 
-    protected $header = "";
-
     public static function fromCommand(OperationCommand $command)
     {
         $response = $command->getResponse();
         $items = $response->json();
-        $this->header = "teste";
 
         return new static($items);
     }
@@ -73,8 +70,4 @@ class BaseList implements ResponseClassInterface, \ArrayAccess, \Iterator
         return count($this->storage);
     }
 
-    public function getHeader()
-    {
-        return $this->header;
-    }
 }
