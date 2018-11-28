@@ -157,12 +157,35 @@
             "uri": "projects",
             "responseClass": "Gitlab\\Models\\ProjectList",
             "parameters": {
-                "per_page": {
-                    "location": "query"
-                },
-                "page": {
-                    "location": "query"
-                }
+              "per_page": {
+                  "location": "query"
+              },
+              "page": {
+                  "location": "query"
+              },
+              "order_by": {
+                  "location": "query",
+                  "type": "string"
+              },
+              "sort": {
+                  "location": "query",
+                  "type": "string"
+              },
+              "search": {
+                  "location": "query",
+                  "type": "string"
+              },
+              "archived": {
+                  "location":"query"
+              },
+              "owned": {
+                "location": "query",
+                "type": "boolean"
+              },
+              "simple": {
+                "location": "query",
+                "type": "boolean"
+              }
             }
         },
         "GetProjectsAll": {

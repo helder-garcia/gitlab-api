@@ -25,6 +25,14 @@
                 },
                 "archived": {
                     "location":"query"
+                },
+                "owned": {
+                  "location": "query",
+                  "type": "boolean"
+                },
+                "simple": {
+                  "location": "query",
+                  "type": "boolean"
                 }
             }
         },
