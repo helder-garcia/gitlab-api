@@ -11,20 +11,56 @@ class ProjectList implements ResponseClassInterface, \ArrayAccess, \Iterator
 
     protected $pointer = 0;
 
+    protected $headers = array();
+
     public static function fromCommand(OperationCommand $command)
     {
         $response = $command->getResponse();
         $items = $response->json();
+        $headersString = $response->getRawHeaders();
+        $matches = []; $headers = [];
+        preg_match_all('/(X.*:\s\d+)/', $headersString, $matches);
+        foreach ($matches[0] as $match) {
+            $pieces = explode(": ", $match);
+            $key = $pieces[0];
+            $headers[$pieces[0]] = $pieces[1];
+        }
 
-        return new self($items);
+        return new self($items, $headers);
     }
 
-    public function __construct(array $items)
+    public function __construct(array $items, array $headers)
     {
-        foreach ($items as $item) {
-            $issue = new Project($item);
-            $this->storage[] = $issue;
-        }
+      $this->headers = $headers;
+      foreach ($items as $item) {
+        $issue = new Project($item);
+        $this->storage[] = $issue;
+      }
+    }
+
+    public function getHeaderPage()
+    {
+        return $this->headers['X-Page'];
+    }
+
+    public function getHeaderNextPage()
+    {
+        return $this->headers['X-Next-Page'];
+    }
+
+    public function getHeaderPerPage()
+    {
+        return $this->headers['X-Per-Page'];
+    }
+
+    public function getHeaderTotal()
+    {
+        return $this->headers['X-Total'];
+    }
+
+    public function getHeaderTotalPages()
+    {
+        return $this->headers['X-Total-Pages'];
     }
 
     public function offsetExists($offset)
@@ -72,4 +108,10 @@ class ProjectList implements ResponseClassInterface, \ArrayAccess, \Iterator
     {
         $this->pointer = 0;
     }
+
+    public function count()
+    {
+      return count($this->storage);
+    }
+
 }
